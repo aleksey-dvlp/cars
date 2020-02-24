@@ -51,7 +51,6 @@ for t in np.arange(dt,T,dt):
     for i in range(N):
         xnew[i] = x[i] + v[i]*dt
 
-
     j = []
     for i in range(N):
         if i == 0:
@@ -72,29 +71,20 @@ for t in np.arange(dt,T,dt):
 
     for i in range(len(j)):
         xnew[j[i]] = xnew1[j[i]]
-            
-        
-
-    
-                
+               
     for i in range(N):
         x[i] = xnew[i]
         xcar[i].append(x[i])
-
-    
-        
+           
     print('--------', t)
     print(x)
 
 for i in range(N):
     plt.plot(xcar[i], time)
 
-
 plt.xlabel('position on the road (a coordinate), km')
 plt.ylabel('time, min')
 plt.plot(left, time, color='black')
 plt.plot(right, time, color = 'black')
-
-
 
 plt.show()
